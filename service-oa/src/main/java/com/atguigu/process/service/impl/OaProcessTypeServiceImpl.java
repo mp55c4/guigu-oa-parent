@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -37,19 +38,23 @@ public class OaProcessTypeServiceImpl extends ServiceImpl<OaProcessTypeMapper, P
             wrapper.eq(ProcessTemplate::getProcessTypeId,typeId);
             List<ProcessTemplate> processTemplateList = oaProcessTemplateService.list(wrapper);
             //应该使用迭代器来安全实现
-            Iterator<ProcessTemplate> iterator = processTemplateList.iterator();
-            while (iterator.hasNext()){
-                ProcessTemplate processTemplate = iterator.next();
-                if(processTemplate.getStatus() == 0){
-                    iterator.remove();
-                }
-            }
-//如果用remove方式实现会出现currentmodificationexception
-//            for(ProcessTemplate processTemplate : processTemplateList){
+//            Iterator<ProcessTemplate> iterator = processTemplateList.iterator();
+//            while (iterator.hasNext()){
+//                ProcessTemplate processTemplate = iterator.next();
 //                if(processTemplate.getStatus() == 0){
-//                    processTemplateList.remove(processTemplate);
+//                    iterator.remove();
 //                }
 //            }
+            //stream流的写法
+//            processTemplateList = processTemplateList.stream()
+//                    .filter(processTemplate -> processTemplate.getStatus() == 1)
+//                    .collect(Collectors.toList());
+//如果用remove方式实现会出现currentmodificationexception
+            for(ProcessTemplate processTemplate : processTemplateList){
+                if(processTemplate.getStatus() == 0){
+                    processTemplateList.remove(processTemplate);
+                }
+            }
             //4.根据审批分类id查询对应审批模版数据list封装到每个审批分类对象里面
             processType.setProcessTemplateList(processTemplateList);
         }

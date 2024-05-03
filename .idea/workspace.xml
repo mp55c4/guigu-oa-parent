@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a099b9e6-a442-4a86-8d05-a826dc0b6daa" name="Changes" comment="" />
+    <list default="true" id="a099b9e6-a442-4a86-8d05-a826dc0b6daa" name="Changes" comment="第一次提交">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessTypeServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,12 +239,16 @@
       <workItem from="1714550701744" duration="11292000" />
       <workItem from="1714577147293" duration="990000" />
       <workItem from="1714648294745" duration="2578000" />
-      <workItem from="1714712038599" duration="5041000" />
+      <workItem from="1714712038599" duration="5525000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="第一次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="第一次提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
