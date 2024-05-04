@@ -11,6 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.util.PerformanceSensitive;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class SysMenuController {
     @Autowired
     private SysMenuService sysMenuService;
     //查询所有菜单和角色分配的菜单
+    @PreAuthorize("hasAnyAuthority('bnt.sysMenu.list')")
     @ApiOperation("查询所有菜单和角色分配的菜单")
     @GetMapping("/toAssign/{roleId}")
     public Result toAssign(@PathVariable Long roleId){
@@ -51,20 +53,22 @@ public class SysMenuController {
         List<SysMenu> list = sysMenuService.findNodes();
         return Result.ok(list);
     }
+    @PreAuthorize("hasAnyAuthority('bnt.sysMenu.add')")
+
     @ApiOperation("新增菜单")
     @PostMapping("save")
     public Result save(@RequestBody SysMenu permission) {
         sysMenuService.save(permission);
         return Result.ok();
     }
-
+    @PreAuthorize("hasAnyAuthority('bnt.sysMenu.update')")
     @ApiOperation("修改菜单")
     @PutMapping("update")
     public Result updateById(@RequestBody SysMenu permission) {
         sysMenuService.updateById(permission);
         return Result.ok();
     }
-
+    @PreAuthorize("hasAnyAuthority('bnt.sysMenu.remove')")
     @ApiOperation("删除菜单")
     @DeleteMapping("remove/{id}")
     public Result remove(@PathVariable Long id) {

@@ -38,6 +38,8 @@ public class SysRoleController {
         return Result.ok(map);
     }
     //2.为用户分配角色
+
+    @PreAuthorize("hasAnyAuthority('bnt.sysUser.assignRole')")
     @ApiOperation("为用户分配角色")
     @PostMapping("doAssign")
     public Result doAssign(@RequestBody AssginRoleVo assginRoleVo){
