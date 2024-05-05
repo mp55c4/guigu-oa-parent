@@ -43,10 +43,11 @@ public class ProcessTest2 {
         //设置任务人
         map.put("assignee1","zhangsan");
         map.put("assignee2","lisi");
-        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("jiaban", map);
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("qingjia", map);
         System.out.println("流程实例id："+processInstance.getId());
         System.out.println("流程定义id："+processInstance.getProcessDefinitionId());
         System.out.println("流程定义名称："+processInstance.getName());
+        System.out.println(processInstance.getBusinessKey());
     }
     //查询个人待办任务
     @Test

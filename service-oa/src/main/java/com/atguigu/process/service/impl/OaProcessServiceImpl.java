@@ -105,15 +105,16 @@ public class OaProcessServiceImpl extends ServiceImpl<OaProcessMapper,Process> i
         ProcessTemplate processTemplate = processTemplateService.getById(processFormVo.getProcessTemplateId());
         //3保存提交审批信息到业务表oa_process
         Process process = new Process();
+        //原来的代码中没有processid你获取个毛逻辑写的混乱，无语
+        //查询process表中的最后一个值，让id值加一，赋给process.getID(),
+        List<Process> processesList = baseMapper.selectList(null);
+        Process process1 = processesList.get(processesList.size()-1);
         //processFormVo复制到process对象里面
-        BeanUtils.copyProperties(processFormVo, process);
-
-
-        // 启动流程实例-RuntimeService
+        BeanUtils.copyProperties(processFormVo, process);// 启动流程实例-RuntimeService
         //4.1流程定义key
         String processDefinitionKey = processTemplate.getProcessDefinitionKey();
         //4.2业务key processId
-        String businessKey = String.valueOf(process.getId());
+        String businessKey = String.valueOf(process1.getId()+1);
         //4.3流程参数
         Map<String, Object> variables = new HashMap<>();
         //4.4将表单数据放入流程实例中
@@ -152,6 +153,7 @@ public class OaProcessServiceImpl extends ServiceImpl<OaProcessMapper,Process> i
             }
             process.setDescription("等待" + StringUtils.join(assigneeList.toArray(), ",") + "审批");
         }
+
         baseMapper.updateById(process);
         //记录操作行为
         processRecordService.record(process.getId(), 1, "发起申请");
@@ -171,7 +173,10 @@ public class OaProcessServiceImpl extends ServiceImpl<OaProcessMapper,Process> i
         // 根据流程的业务ID查询实体并关联
         for (Task item : list) {
             String processInstanceId = item.getProcessInstanceId();
-            ProcessInstance processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstanceId).singleResult();
+            ProcessInstance processInstance = runtimeService
+                    .createProcessInstanceQuery()
+                    .processInstanceId(processInstanceId)
+                    .singleResult();
             if (processInstance == null) {
                 continue;
             }
