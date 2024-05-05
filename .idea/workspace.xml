@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a099b9e6-a442-4a86-8d05-a826dc0b6daa" name="Changes" comment="该类中直接使用List的remove方法会出现currentmodificationexception的错误，改用迭代器实现">
+    <list default="true" id="a099b9e6-a442-4a86-8d05-a826dc0b6daa" name="Changes" comment="在controller类里面增加了@PreAuthorize权限控制注解，解决了权限控制的问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/common/config/mp/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/common/config/mp/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/common/config/mp/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/common/config/mp/MybatisPlusConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysDept.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysOperLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysOperLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/wechat/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/atguigu/model/system/SysDept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/atguigu/model/system/SysOperLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/classes/com/atguigu/model/system/SysOperLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/com/atguigu/model/wechat/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/process/service/impl/OaProcessTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/process/service/impl/OaProcessTypeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/test/java/com/atguigu/code.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/test/java/com/atguigu/code.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/code.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/code.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,8 +188,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JwtHelper" />
         <item itemvalue="Application.code" />
+        <item itemvalue="Application.JwtHelper" />
         <item itemvalue="JUnit.ProcessTest001.findGroupTaskList" />
         <item itemvalue="JUnit.ProcessTest001.delplyProcess" />
         <item itemvalue="JUnit.ProcessTest4.findGroupPendingTaskList" />
@@ -246,7 +253,9 @@
       <workItem from="1714577147293" duration="990000" />
       <workItem from="1714648294745" duration="2578000" />
       <workItem from="1714712038599" duration="6555000" />
-      <workItem from="1714791230895" duration="6956000" />
+      <workItem from="1714791230895" duration="7621000" />
+      <workItem from="1714828698024" duration="4477000" />
+      <workItem from="1714872592605" duration="12125000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1714725652976</created>
@@ -269,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714725857678</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="在controller类里面增加了@PreAuthorize权限控制注解，解决了权限控制的问题">
+      <created>1714808989927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714808989927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +294,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次提交" />
     <MESSAGE value="该类中直接使用List的remove方法会出现currentmodificationexception的错误，改用迭代器实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="该类中直接使用List的remove方法会出现currentmodificationexception的错误，改用迭代器实现" />
+    <MESSAGE value="在controller类里面增加了@PreAuthorize权限控制注解，解决了权限控制的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="在controller类里面增加了@PreAuthorize权限控制注解，解决了权限控制的问题" />
   </component>
 </project>

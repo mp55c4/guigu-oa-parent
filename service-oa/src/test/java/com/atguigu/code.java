@@ -37,7 +37,7 @@ public class code {
         // 4、包配置
         PackageConfig pc = new PackageConfig();
         pc.setParent("com.atguigu");
-        pc.setModuleName("process"); //模块名
+        pc.setModuleName("oper"); //模块名
         pc.setController("controller");
         pc.setService("service");
         pc.setMapper("mapper");
@@ -46,7 +46,7 @@ public class code {
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
 
-        strategy.setInclude("oa_process_record");
+        strategy.setInclude("sys_oper_log");
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
 

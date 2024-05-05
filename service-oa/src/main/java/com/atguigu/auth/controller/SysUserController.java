@@ -7,6 +7,7 @@ import com.atguigu.common.result.Result;
 import com.atguigu.common.utils.MD5;
 import com.atguigu.model.system.SysRole;
 import com.atguigu.model.system.SysUser;
+import com.atguigu.oper.service.SysOperLogService;
 import com.atguigu.vo.system.SysUserQueryVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -36,6 +37,8 @@ public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
     private SysRoleService sysRoleService;
+    @Autowired
+    private SysOperLogService sysOperLogService;
     //用户条件分页查询
     @PreAuthorize("hasAnyAuthority('bnt.sysUser.list')")
     @ApiOperation("用户条件分页查询")
