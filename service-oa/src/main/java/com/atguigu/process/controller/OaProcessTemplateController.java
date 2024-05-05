@@ -73,30 +73,32 @@ public class OaProcessTemplateController {
         oaprocessTemplateService.removeById(id);
         return Result.ok();
     }
-    @ApiOperation("上传流程定义")
+    @ApiOperation(value = "上传流程定义")
     @PostMapping("/uploadProcessDefinition")
     public Result uploadProcessDefinition(MultipartFile file) throws FileNotFoundException {
-        //获取绝对路径
-        String path = new File(ResourceUtils.getURL("classpath:")
-                .getPath()).getAbsolutePath();
-        //设置上传文件夹
+        String path = new File(ResourceUtils.getURL("classpath:").getPath()).getAbsolutePath();
+
+        String fileName = file.getOriginalFilename();
+        // 上传目录
         File tempFile = new File(path + "/processes/");
-        if(!tempFile.exists()){
-            tempFile.mkdirs();
+        // 判断目录是否存着
+        if (!tempFile.exists()) {
+            tempFile.mkdirs();//创建目录
         }
-        String filename = file.getOriginalFilename();
-        //创建空文件，实现文件写入
-        File zipfile = new File(path + "/processes/" + filename);
-        //保存文件
+        // 创建空文件用于写入文件
+        File imageFile = new File(path + "/processes/" + fileName);
+        // 保存文件流到本地
         try {
-            file.transferTo(zipfile);
+            file.transferTo(imageFile);
         } catch (IOException e) {
-            return Result.fail();
+            e.printStackTrace();
+            return Result.fail("上传失败");
         }
-        Map<String,Object> map = new HashMap<>();
+
+        Map<String, Object> map = new HashMap<>();
         //根据上传地址后续部署流程定义，文件名称为流程定义的默认key
-        map.put("processDefinitionPath","processes/"+filename);
-        map.put("processDefinitionKey",filename.substring(0,filename.lastIndexOf(".")));
+        map.put("processDefinitionPath", "processes/" + fileName);
+        map.put("processDefinitionKey", fileName.substring(0, fileName.lastIndexOf(".")));
         return Result.ok(map);
     }
     //部署流程定义（发布）

@@ -108,14 +108,7 @@ public class OaProcessServiceImpl extends ServiceImpl<OaProcessMapper,Process> i
         //processFormVo复制到process对象里面
         BeanUtils.copyProperties(processFormVo, process);
 
-        //其他值
-        String workNo = System.currentTimeMillis() + "";
-        process.setProcessCode(workNo);
-        process.setUserId(LoginUserInfoHelper.getUserId());
-        process.setFormValues(processFormVo.getFormValues());
-        process.setTitle(sysUser.getName() + "发起" + processTemplate.getName() + "申请");
-        process.setStatus(1);
-        baseMapper.insert(process);
+
         // 启动流程实例-RuntimeService
         //4.1流程定义key
         String processDefinitionKey = processTemplate.getProcessDefinitionKey();
@@ -133,12 +126,20 @@ public class OaProcessServiceImpl extends ServiceImpl<OaProcessMapper,Process> i
         }
         variables.put("data", map);
         //启动流程实例
-        runtimeService.startProcessInstanceByKey(processDefinitionKey,
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(processDefinitionKey,
                 businessKey, variables);
+        //其他值
+        String workNo = System.currentTimeMillis() + "";
+        process.setProcessCode(workNo);
+        process.setUserId(LoginUserInfoHelper.getUserId());
+        process.setFormValues(processFormVo.getFormValues());
+        process.setTitle(sysUser.getName() + "发起" + processTemplate.getName() + "申请");
+        process.setStatus(1);
+        process.setProcessInstanceId(processInstance.getProcessInstanceId());
+        baseMapper.insert(process);
         //业务表关联当前流程实例id
         String processInstanceId = process.getProcessInstanceId();
         process.setProcessInstanceId(processInstanceId);
-
         //5计算下一个审批人，可能有多个（并行审批）
         List<Task> taskList = this.getCurrentTaskList(processInstanceId);
         if (!CollectionUtils.isEmpty(taskList)) {

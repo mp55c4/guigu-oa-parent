@@ -4,15 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a099b9e6-a442-4a86-8d05-a826dc0b6daa" name="Changes" comment="添加了日志页面，实现了查询功能呢">
+    <list default="true" id="a099b9e6-a442-4a86-8d05-a826dc0b6daa" name="Changes" comment="关闭了热启动功能，因为使用文件上传往target中写入文件的时候，项目总是重启然后导致报错崩溃，关闭了热启动。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/atguigu/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/atguigu/common/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/result/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/result/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/atguigu/model/system/SysLoginLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/com/atguigu/model/system/SysLoginLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/com/atguigu/model/system/SysPost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/auth/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/auth/controller/SysUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/src/main/java/com/atguigu/common/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-util/src/main/java/com/atguigu/common/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/jwt/JwtHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/result/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/result/ResultCodeEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/utils/MD5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-util/target/classes/com/atguigu/common/utils/ResponseUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/config/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/custom/CustomMd5PasswordEncoder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/custom/CustomUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/custom/LoginUserInfoHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/custom/UserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/filter/TokenAuthenticationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/spring-security/target/classes/com/atguigu/security/filter/TokenLoginFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessTemplateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessTemplateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/process/controller/OaProcessTemplateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/process/controller/OaProcessTemplateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/process/service/impl/OaProcessServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/service-oa/target/classes/com/atguigu/process/service/impl/OaProcessServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/classes/processes/qingjia.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/Demo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/SysMapplerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/activiti/MyTaskListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/activiti/ProcessTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/activiti/ProcessTest001.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/activiti/ProcessTest2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/activiti/ProcessTest3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/auth/activiti/ProcessTest4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oa/target/test-classes/com/atguigu/code.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +85,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wangy/OneDrive/Desktop/graduation/Springboot3学习代码-尚硅谷/guigu-oa-parent&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/wangy/OneDrive/Desktop/graduation/Springboot3学习代码-尚硅谷/guigu-oa-parent/service-oa/target/classes/processes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,6 +104,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wangy\OneDrive\Desktop\graduation\Springboot3学习代码-尚硅谷\guigu-oa-parent\service-oa\target\classes\processes" />
       <recent name="C:\Users\wangy\OneDrive\Desktop\graduation\Springboot3学习代码-尚硅谷\guigu-oa-parent\service-oa\src\main\resources\process" />
       <recent name="C:\Users\wangy\OneDrive\Desktop\graduation\Springboot3学习代码-尚硅谷\guigu-oa-parent\common\common-util\src\main\java\com\atguigu\common\utils" />
       <recent name="C:\Users\wangy\OneDrive\Desktop\graduation\Springboot3学习代码-尚硅谷\guigu-oa-parent\model\src\main\java" />
@@ -181,8 +203,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.code" />
         <item itemvalue="Application.JwtHelper" />
+        <item itemvalue="Application.code" />
         <item itemvalue="JUnit.ProcessTest001.findGroupTaskList" />
         <item itemvalue="JUnit.ProcessTest001.delplyProcess" />
         <item itemvalue="JUnit.ProcessTest4.findGroupPendingTaskList" />
@@ -248,7 +270,9 @@
       <workItem from="1714712038599" duration="6555000" />
       <workItem from="1714791230895" duration="7621000" />
       <workItem from="1714828698024" duration="4477000" />
-      <workItem from="1714872592605" duration="17809000" />
+      <workItem from="1714872592605" duration="23002000" />
+      <workItem from="1714903786692" duration="5156000" />
+      <workItem from="1714909168483" duration="2276000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1714725652976</created>
@@ -285,7 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714892807025</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成了在操作室对日志的记录（仅对用户添加实现了这个功能）">
+      <created>1714898568743</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714898568743</updated>
+    </task>
+    <task id="LOCAL-00007" summary="完成了在操作室对日志的记录（仅对用户添加实现了这个功能）">
+      <created>1714898577568</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714898577568</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +334,99 @@
     <MESSAGE value="该类中直接使用List的remove方法会出现currentmodificationexception的错误，改用迭代器实现" />
     <MESSAGE value="在controller类里面增加了@PreAuthorize权限控制注解，解决了权限控制的问题" />
     <MESSAGE value="添加了日志页面，实现了查询功能呢" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了日志页面，实现了查询功能呢" />
+    <MESSAGE value="完成了在操作室对日志的记录（仅对用户添加实现了这个功能）" />
+    <MESSAGE value="关闭了热启动功能，因为使用文件上传往target中写入文件的时候，项目总是重启然后导致报错崩溃，关闭了热启动。" />
+    <option name="LAST_COMMIT_MESSAGE" value="关闭了热启动功能，因为使用文件上传往target中写入文件的时候，项目总是重启然后导致报错崩溃，关闭了热启动。" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>266</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>273</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>274</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>240</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>241</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>242</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>243</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/service/impl/OaProcessServiceImpl.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessTemplateController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-oa/src/main/java/com/atguigu/process/controller/OaProcessTemplateController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

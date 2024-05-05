@@ -52,9 +52,10 @@ public class JwtHelper {
             return null;
         }
     }
-
+    //\\\\\\\\\\\\\\\\\\\\\\\
+    //生成token测试用
     public static void main(String[] args) {
-        String token = JwtHelper.createToken(7L, "zhangsan");
+        String token = JwtHelper.createToken(4L, "lisi");
         System.out.println(token);
         System.out.println(JwtHelper.getUserId(token));
         System.out.println(JwtHelper.getUsername(token));
