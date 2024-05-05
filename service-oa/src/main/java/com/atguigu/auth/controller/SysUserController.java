@@ -5,6 +5,7 @@ import com.atguigu.auth.service.SysRoleService;
 import com.atguigu.auth.service.SysUserService;
 import com.atguigu.common.result.Result;
 import com.atguigu.common.utils.MD5;
+import com.atguigu.model.system.SysOperLog;
 import com.atguigu.model.system.SysRole;
 import com.atguigu.model.system.SysUser;
 import com.atguigu.oper.service.SysOperLogService;
@@ -19,6 +20,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -76,12 +80,19 @@ public class SysUserController {
     @PreAuthorize("hasAnyAuthority('bnt.sysUser.add')")
     @ApiOperation("添加用户")
     @PostMapping("save")
-    public Result save(@RequestBody SysUser user){
+    public Result save(@RequestBody SysUser user, HttpServletRequest request) throws IOException {
         String password = user.getPassword();
         String encrypt = MD5.encrypt(password);
         user.setPassword(encrypt);
-        sysUserService.save(user);
-        return Result.ok();
+        boolean is_success = sysUserService.save(user);
+        Result<Result> ok = Result.ok();
+        if(is_success){
+            sysOperLogService.saveOperLog(request,Result.ok());
+            return Result.ok();
+
+        }else{
+            return Result.ok();
+        }
     }
     @PreAuthorize("hasAnyAuthority('bnt.sysUser.update')")
     @ApiOperation("更新用户")

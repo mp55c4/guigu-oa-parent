@@ -22,6 +22,7 @@ public class Result<T> {
     }
     //成功
     public static<T> Result<T> ok(){
+
         return build(null,ResultCodeEnum.SUCCESS);
     }
 
