@@ -84,7 +84,7 @@ public class IndexController {
         map.put("buttons",permsList);
         map.put("roles","[admin]");
         map.put("name",sysUser.getName());
-        map.put("avatar","https://oss.aliyuncs.com/aliyun_id_photo_bucket/default_handsome.jpg");
+        map.put("avatar","https://img.picgo.net/2024/05/06/Snipaste_2024-05-06_12-50-5526653248fc6ad7b9.jpeg");
         //返回用户可以返回菜单
         map.put("routers",routerList);
         //返回用户可以操作按钮

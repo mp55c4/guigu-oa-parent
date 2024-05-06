@@ -87,6 +87,8 @@ public class OaProcessTemplateController {
         }
         // 创建空文件用于写入文件
         File imageFile = new File(path + "/processes/" + fileName);
+        //出现了问题先临时修复一下
+//        File imageFile = new File("C:\\Users\\wangy\\OneDrive\\Desktop\\graduation\\Springboot3学习代码-尚硅谷\\guigu-oa-parent\\service-oa\\target\\classes\\processes");
         // 保存文件流到本地
         try {
             file.transferTo(imageFile);

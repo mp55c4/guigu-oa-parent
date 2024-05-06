@@ -37,21 +37,9 @@ public class SysUser extends BaseEntity {
 	@TableField("head_url")
 	private String headUrl;
 
-	@ApiModelProperty(value = "部门id")
-	@TableField("dept_id")
-	private Long deptId;
-
-	@ApiModelProperty(value = "岗位id")
-	@TableField("post_id")
-	private Long postId;
-
 	@ApiModelProperty(value = "描述")
 	@TableField("description")
 	private String description;
-
-	@ApiModelProperty(value = "openId")
-	@TableField("open_id")
-	private String openId;
 
 	@ApiModelProperty(value = "状态（1：正常 0：停用）")
 	@TableField("status")
